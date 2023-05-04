@@ -234,14 +234,13 @@ def detect(opt):
         print('Results saved to %s' % save_path)
         if platform == 'darwin':  # MacOS
             os.system('open ' + save_path)
-
+ 
 def count_obj(box,w,h,id):
     global count,data
     center_coordinates = (int(box[0]+(box[2]-box[0])/2) , int(box[1]+(box[3]-box[1])/2))
-    if int(box[1]+(box[3]-box[1])/2) > (h -350):
-        if  id not in data:
-            count += 1
-            data.append(id)
+    if  id not in data:
+        count += 1
+        data.append(id)
 
 
 if __name__ == '__main__':
